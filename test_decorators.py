@@ -1,5 +1,3 @@
-"""Тесты для модуля decorators."""
-
 import io
 import re
 import unittest
