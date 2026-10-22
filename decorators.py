@@ -1,4 +1,4 @@
-"""Модуль с собственными декораторами: hello, timer, retry."""
+
 
 import logging
 import time
@@ -8,7 +8,7 @@ logger = logging.getLogger(__name__)
 
 
 def hello(func):
-    """Печатает «Начинаем...» перед вызовом функции и «Готово!» после."""
+    
 
     @wraps(func)
     def wrapper(*args, **kwargs):
@@ -21,7 +21,7 @@ def hello(func):
 
 
 def timer(func):
-    """Измеряет и печатает время выполнения функции в секундах (4 знака)."""
+    
 
     @wraps(func)
     def wrapper(*args, **kwargs):
@@ -36,15 +36,7 @@ def timer(func):
 
 
 def retry(attempts=3, delay=0):
-    """Повторяет вызов функции при исключении.
-
-    Args:
-        attempts: максимальное число попыток (не меньше 1).
-        delay: пауза между попытками в секундах.
-
-    Raises:
-        RuntimeError: если все попытки закончились исключением.
-    """
+  
     if attempts < 1:
         raise ValueError("attempts должно быть не меньше 1")
 
